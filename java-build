@@ -1,0 +1,11 @@
+#!/bin/sh
+
+basedir=
+src_files=""
+#allow_kotlin_package=-Xallow-kotlin-package
+dependdir=${basedir}dependencies/
+bootstrapdir=${dependdir}bootstrap-compiler/
+bootstrap_compiler_home=${bootstrapdir}Kotlin/kotlinc/
+ideasdk_core_dir=${basedir}ideaSDK/core/
+
+javac -cp ${basedir}ideaSDK/lib/idea.jar:${basedir}ideaSDK/lib/util.jar:${bootstrap_compiler_home}lib/kotlin-compiler.jar:${dependdir}jline3.jar:${dependdir}jansi.jar:${dependdir}javaslang-2.0.6.jar:${dependdir}json-org.jar:${dependdir}kotlinx-coroutines-core.jar:${basedir}ideaSDK/jps/jps-model.jar:${bootstrap_compiler_home}lib/kotlin-stdlib.jar:${bootstrap_compiler_home}lib/kotlin-reflect.jar:${bootstrap_compiler_home}lib/kotlin-script-runtime.jar:${bootstrap_compiler_home}lib/kotlin-test.jar:${ideasdk_core_dir}annotations.jar:${ideasdk_core_dir}asm-all.jar:${ideasdk_core_dir}guava-21.0.jar:${ideasdk_core_dir}jdom.jar:${ideasdk_core_dir}jna.jar:${ideasdk_core_dir}log4j.jar:${ideasdk_core_dir}picocontainer.jar:${ideasdk_core_dir}snappy-in-java-0.5.1.jar:${ideasdk_core_dir}streamex-0.6.2.jar:${ideasdk_core_dir}trove4j.jar:${ideasdk_core_dir}util.jar:${ideasdk_core_dir}xpp3-1.1.4-min.jar:${ideasdk_core_dir}xstream-1.4.8.jar:${ideasdk_core_dir}intellij-core.jar:${dependdir}protobuf-2.6.1.jar:"${JDK_18}/lib/tools.jar":${basedir}lib/javax.inject.jar:${basedir}lib/jsr305-1.3.9.jar ${allow_kotlin_package} ${src_files}
